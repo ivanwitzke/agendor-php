@@ -8,8 +8,7 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "websix",
-			"homepage": ""
+			"name": "websix"
 		}
 	],
 	"require": {
@@ -22,6 +21,6 @@
 		 "simpletest/simpletest": "*"
 	},
 	"autoload": {
-		"classmap":["lib/Agendor"]
+		"W6":["lib/Agendor"]
 	}
 }
