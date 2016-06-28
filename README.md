@@ -3,4 +3,4 @@ agendor-php
 
 Agendor PHP API
 
-<!-- [![Build Status](https://travis-ci.org/agendor/agendor-php.png?branch=master)](https://travis-ci.org/agendor/agendor-php) -->
+This API is stil in pre-alha state. It's not recommended to use it yet.
