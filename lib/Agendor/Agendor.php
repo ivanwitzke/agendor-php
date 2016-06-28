@@ -1,5 +1,4 @@
 <?php
-namespace AIW\Agendor;
 
 abstract class Agendor
 {

@@ -1,5 +1,4 @@
 <?php
-namespace AIW\Agendor;
 
 class AgendorSet implements \Iterator
 {

@@ -1,5 +1,4 @@
 <?php
-namespace AIW\Agendor;
 
 class AgendorException extends \Exception
 {
