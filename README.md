@@ -1,6 +1,6 @@
-pagarme-php
+agendor-php
 ===========
 
-Pagar.me's PHP API
+Agendor PHP API
 
-[![Build Status](https://travis-ci.org/pagarme/pagarme-php.png?branch=master)](https://travis-ci.org/pagarme/pagarme-php)
+<!-- [![Build Status](https://travis-ci.org/agendor/agendor-php.png?branch=master)](https://travis-ci.org/agendor/agendor-php) -->
