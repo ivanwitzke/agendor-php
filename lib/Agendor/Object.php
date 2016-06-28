@@ -195,7 +195,7 @@ class AgendorObject implements \ArrayAccess, \Iterator
     public function __toArray($recursive = false)
     {
         if ($recursive) {
-            return AgendorUtil::convertAgendorbjectToArray($this->_attributes);
+            return AgendorUtil::convertAgendorObjectToArray($this->_attributes);
         }
         return $this->_attributes;
     }
