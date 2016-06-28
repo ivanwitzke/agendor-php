@@ -5,8 +5,8 @@ abstract class Agendor
 {
     public static $api_key;
     const LIVE = 1;
-    // const ENDPOINT = "https://api.agendor.com.br";
-    const ENDPOINT = "https://private-anon-3f86628f4-agendor.apiary-mock.com";
+    const ENDPOINT = "https://api.agendor.com.br";
+    // const ENDPOINT = "https://private-anon-3f86628f4-agendor.apiary-mock.com";
     const API_VERSION = '1';
 
     public static function fullApiUrl($path)
