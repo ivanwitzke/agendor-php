@@ -1,5 +1,5 @@
 <?php
-namespace W6\Agendor;
+namespace Agendor;
 
 class AgendorTask extends AgendorModel
 {

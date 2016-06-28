@@ -1,5 +1,5 @@
 {
-	"name": "W6/agendor-php",
+	"name": "ivanwitzke/agendor-php",
 	"description": "Agendor PHP Library",
 	"keywords": [
 		"api"
@@ -18,6 +18,6 @@
 		"ext-mbstring":"*"
 	},
 	"autoload": {
-		"W6":["lib/Agendor"]
+		"Agendor":["lib/Agendor"]
 	}
 }
