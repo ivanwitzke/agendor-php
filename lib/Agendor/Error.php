@@ -1,6 +1,6 @@
 <?php
 
-class PagarMe_Error {
+class AgendorError {
         protected $parameter_name, $type, $message;
 
         public function __construct($error) {

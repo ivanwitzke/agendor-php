@@ -1,7 +1,7 @@
 <?php
 namespace W6\Agendor;
 
-class AgendorObject implements ArrayAccess, Iterator
+class AgendorObject implements \ArrayAccess, \Iterator
 {
 
     protected $_attributes;
@@ -145,7 +145,7 @@ class AgendorObject implements ArrayAccess, Iterator
         }
 
         foreach ($response as $key => $value) {
-            $this->_attributes[$key] = AgendorUtil::convertToAgendorbject($value);
+            $this->_attributes[$key] = AgendorUtil::convertToAgendorObject($value);
             $this->_unsavedAttributes->remove($key);
         }
 

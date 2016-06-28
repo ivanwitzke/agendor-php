@@ -1,6 +1,4 @@
 <?php
-use W6\Agendor\AgendorObject;
-
 namespace W6\Agendor;
 
 class AgendorModel extends AgendorObject

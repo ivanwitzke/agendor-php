@@ -52,10 +52,10 @@ class AgendorUtil
     public static function convertToAgendorObject($response)
     {
         $types = array(
-            'person' => 'AgendorPeople',
-            'deal' => 'AgendorDeal',
-            'organization' => 'AgendorOrganization',
-            'task' => 'AgendorTask'
+            'person' => 'W6\Agendor\AgendorPeople',
+            'deal' => 'W6\Agendor\AgendorDeal',
+            'organization' => 'W6\Agendor\AgendorOrganization',
+            'task' => 'W6\Agendor\AgendorTask'
         );
 
         if (self::isList($response)) {
@@ -67,9 +67,9 @@ class AgendorUtil
         } else if (is_array($response)) {
             $objectName = self::getObjectName($response);
             if (isset($objectName) && is_string($objectName) && isset($types[$objectName])) {
-                $class = $types[$response['object']];
+                $class = $types[$objectName];
             } else {
-                $class = 'AgendorObject';
+                $class = 'W6\Agendor\AgendorObject';
             }
 
             return AgendorObject::build($response, $class);
@@ -83,7 +83,7 @@ class AgendorUtil
         if (is_array($response)) {
             foreach ($response as $key => $value) {
                 if (preg_match('/^([a-zA-Z]+)Id$/', $key, $matches)) {
-                    return $matches[0];
+                    return $matches[1];
                 }
             }
         }
