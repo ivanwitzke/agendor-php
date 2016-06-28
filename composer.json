@@ -17,9 +17,6 @@
 		"ext-json":"*",
 		"ext-mbstring":"*"
 	},
-	"require-dev": {
-		 "simpletest/simpletest": "*"
-	},
 	"autoload": {
 		"W6":["lib/Agendor"]
 	}
