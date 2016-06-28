@@ -1,0 +1,23 @@
+{
+	"name": "W6/agendor-php",
+	"description": "Agendor PHP Library",
+	"keywords": [
+		"api"
+	],
+	"homepage": "http://websix.com.br",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "websix"
+		}
+	],
+	"require": {
+		"php": ">5.3",
+		"ext-curl":"*",
+		"ext-json":"*",
+		"ext-mbstring":"*"
+	},
+	"autoload": {
+		"W6":["lib/Agendor"]
+	}
+}
