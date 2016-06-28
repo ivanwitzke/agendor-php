@@ -13,7 +13,7 @@ class AgendorModel extends AgendorObject
     {
         $class = get_called_class();
         $search = preg_match("/Agendor(.*)/", $class, $matches);
-        return '/'. strtolower($matches[1]) . 's';
+        return '/'. strtolower($matches[1]);
     }
 
     public function create()
@@ -59,7 +59,7 @@ class AgendorModel extends AgendorObject
     public static function all($page = 1, $count = 10)
     {
         $request = new AgendorRequest(self::getUrl(), 'GET');
-        $request->setParameters(array("page" => $page, "count" => $count));
+        $request->setParameters(array("page" => $page, "per_page" => $count));
         $response = $request->run();
         $return_array = array();
         $class = get_called_class();
