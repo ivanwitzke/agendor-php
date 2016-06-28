@@ -12,20 +12,20 @@ class AgendorModel extends AgendorObject
     public static function getUrl()
     {
         $class = get_called_class();
-        $search = preg_match("/Agendor_(.*)/", $class, $matches);
+        $search = preg_match("/Agendor(.*)/", $class, $matches);
         return '/'. strtolower($matches[1]) . 's';
     }
 
     public function create()
     {
         try {
-            $request = new Agendor_Request(self::getUrl(), 'POST');
+            $request = new AgendorRequest(self::getUrl(), 'POST');
             $parameters = $this->__toArray(true);
             $request->setParameters($parameters);
             $response = $request->run();
             return $this->refresh($response);
         } catch (Exception $e) {
-            throw new Agendor_Exception($e->getMessage());
+            throw new AgendorException($e->getMessage());
         }
     }
 
@@ -37,20 +37,20 @@ class AgendorModel extends AgendorObject
                     return false;
                 }
             }
-            $request = new Agendor_Request(self::getUrl(). '/' . $this->id, 'PUT');
+            $request = new AgendorRequest(self::getUrl(). '/' . $this->id, 'PUT');
             $parameters = $this->unsavedArray();
             $request->setParameters($parameters);
             $response = $request->run();
             return $this->refresh($response);
         } catch (Exception $e) {
-            throw new Agendor_Exception($e->getMessage());
+            throw new AgendorException($e->getMessage());
         }
     }
 
 
     public static function findById($id)
     {
-        $request = new Agendor_Request(self::getUrl() . '/' . $id, 'GET');
+        $request = new AgendorRequest(self::getUrl() . '/' . $id, 'GET');
         $response = $request->run();
         $class = get_called_class();
         return new $class($response);
@@ -58,7 +58,7 @@ class AgendorModel extends AgendorObject
 
     public static function all($page = 1, $count = 10)
     {
-        $request = new Agendor_Request(self::getUrl(), 'GET');
+        $request = new AgendorRequest(self::getUrl(), 'GET');
         $request->setParameters(array("page" => $page, "count" => $count));
         $response = $request->run();
         $return_array = array();
