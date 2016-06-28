@@ -1,5 +1,4 @@
 <?php
-namespace Agendor;
 
 class AgendorException extends \Exception
 {

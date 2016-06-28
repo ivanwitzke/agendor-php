@@ -1,5 +1,4 @@
 <?php
-namespace Agendor;
 
 abstract class Agendor
 {
