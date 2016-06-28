@@ -1,5 +1,5 @@
 <?php
-namespace W6\Agendor;
+namespace Agendor;
 
 class AgendorUtil
 {
@@ -52,10 +52,10 @@ class AgendorUtil
     public static function convertToAgendorObject($response)
     {
         $types = array(
-            'person' => 'W6\Agendor\AgendorPeople',
-            'deal' => 'W6\Agendor\AgendorDeal',
-            'organization' => 'W6\Agendor\AgendorOrganization',
-            'task' => 'W6\Agendor\AgendorTask'
+            'person' => 'Agendor\AgendorPeople',
+            'deal' => 'Agendor\AgendorDeal',
+            'organization' => 'Agendor\AgendorOrganization',
+            'task' => 'Agendor\AgendorTask'
         );
 
         if (self::isList($response)) {
@@ -69,7 +69,7 @@ class AgendorUtil
             if (isset($objectName) && is_string($objectName) && isset($types[$objectName])) {
                 $class = $types[$objectName];
             } else {
-                $class = 'W6\Agendor\AgendorObject';
+                $class = 'Agendor\AgendorObject';
             }
 
             return AgendorObject::build($response, $class);

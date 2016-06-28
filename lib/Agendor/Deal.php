@@ -1,5 +1,5 @@
 <?php
-namespace W6\Agendor;
+namespace Agendor;
 
 class AgendorDeal extends AgendorModel
 {
