@@ -1,5 +1,5 @@
 <?php
-namespace Agendor;
+namespace AIW\Agendor;
 
 class AgendorObject implements \ArrayAccess, \Iterator
 {
