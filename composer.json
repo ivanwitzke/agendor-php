@@ -18,6 +18,6 @@
 		"ext-mbstring":"*"
 	},
 	"autoload": {
-		"Agendor":["lib/Agendor"]
+		"Agendor\\":["lib/Agendor"]
 	}
 }
