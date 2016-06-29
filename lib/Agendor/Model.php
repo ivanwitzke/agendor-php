@@ -40,7 +40,7 @@ class AgendorModel extends AgendorObject
                     return false;
                 }
             }
-            $request = new AgendorRequest(self::getUrl(). '/' . $this->id, 'PUT');
+            $request = new AgendorRequest(self::getUrl(). '/' . $this->getId(), 'PUT');
             $parameters = $this->unsavedArray();
             $request->setParameters($parameters);
             $response = $request->run();
