@@ -1,4 +1,5 @@
 <?php
+namespace Agendor;
 
 class AgendorModel extends AgendorObject
 {
@@ -11,7 +12,8 @@ class AgendorModel extends AgendorObject
 
     public static function getUrl()
     {
-        $class = get_called_class();
+        $class_match = explode('\\', get_called_class());
+        $class = isset($class_match[1]) ? $class_match[1] : $class_match[0];
         $search = preg_match("/Agendor(.*)/", $class, $matches);
         if (!preg_match("/people/i", $matches[1])) {
             return '/'. strtolower($matches[1].'s');
