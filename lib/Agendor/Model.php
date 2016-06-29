@@ -13,6 +13,9 @@ class AgendorModel extends AgendorObject
     {
         $class = get_called_class();
         $search = preg_match("/Agendor(.*)/", $class, $matches);
+        if (!preg_match("/people/i", $matches[1])) {
+            return '/'. strtolower($matches[1].'s');
+        }
         return '/'. strtolower($matches[1]);
     }
 
