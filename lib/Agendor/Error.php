@@ -1,17 +1,32 @@
 <?php
+namespace Agendor;
 
-class AgendorError {
-        protected $parameter_name, $type, $message;
+class AgendorError
+{
+    protected $parameter_name;
+    protected $type;
+    protected $message;
 
-        public function __construct($error) {
-                $this->parameters_name = $error['parameter_name'];
-                $this->type = $error['type'];
-                $this->message = $error['message'];
-        }
+    public function __construct($error)
+    {
+        $this->parameters_name = $error['parameter_name'];
+        $this->type = $error['type'];
+        $this->message = $error['message'];
+    }
 
 
-        public function getParameterName() {return $this->parameter_name;}
-        public function getType() {return $this->type;}
-        public function getMessage() {return $this->message;}
+    public function getParameterName()
+    {
+        return $this->parameter_name;
+    }
 
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
