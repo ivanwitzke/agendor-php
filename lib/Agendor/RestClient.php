@@ -92,4 +92,9 @@ class RestClient
 
         return array("code" => $code, "body" => $response);
     }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
 }

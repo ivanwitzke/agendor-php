@@ -30,9 +30,10 @@ class AgendorRequest extends Agendor
         if ($decode === null) {
             throw new Exception("Failed to decode json from response.\n\n Response: ".$response);
         } else {
-            if ($response["code"] == 200) {
+            if ($response["code"] == 200 || $response["code"] == 201) {
                 return $decode;
-
+            } elseif ($response["code"] == 204) {
+                return true;
             } else {
                 throw AgendorException::buildWithFullMessage($decode);
             }

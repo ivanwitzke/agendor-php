@@ -48,7 +48,7 @@ class AgendorObject implements \ArrayAccess, \Iterator
 
     public function __call($name, $arguments)
     {
-        $var = AgendorUtil::fromCamelCase(substr($name, 3));
+        $var = AgendorUtil::fixVarCase(substr($name, 3));
         if (!strncasecmp($name, 'get', 3)) {
             return $this->$var;
         } else if (!strncasecmp($name, 'set', 3)) {
@@ -195,7 +195,7 @@ class AgendorObject implements \ArrayAccess, \Iterator
     public function __toArray($recursive = false)
     {
         if ($recursive) {
-            return AgendorUtil::convertAgendorbjectToArray($this->_attributes);
+            return AgendorUtil::convertAgendorObjectToArray($this->_attributes);
         }
         return $this->_attributes;
     }

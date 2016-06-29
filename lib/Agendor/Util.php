@@ -2,7 +2,7 @@
 
 class AgendorUtil
 {
-    public static function fromCamelCase($str)
+    public static function fixVarCase($str)
     {
         $matches = null;
         if (preg_match_all('/(^|[A-Z])+([a-z]|$)*/', $str, $matches)) {
@@ -10,10 +10,14 @@ class AgendorUtil
             $words_clean = array();
             foreach ($words as $key => $word) {
                 if (strlen($word) > 0) {
-                    $words_clean[] = strtolower($word);
+                    if (sizeof($words) >= 2 && $key == 1) {
+                        $words_clean[] = strtolower($word);
+                    } else {
+                        $words_clean[] = ucfirst($word);
+                    }
                 }
             }
-            return implode('_', $words_clean);
+            return implode('', $words_clean);
         } else {
             return strtolower($str);
         }
