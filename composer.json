@@ -17,7 +17,9 @@
 		"ext-json":"*",
 		"ext-mbstring":"*"
 	},
-	"autoload": {
-		"classmap":["lib/Agendor"]
-	}
+    "autoload": {
+        "psr-0": {
+            "Agendor": "lib/Agendor"
+        }
+    }
 }
