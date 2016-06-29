@@ -56,10 +56,10 @@ class AgendorUtil
     public static function convertToAgendorObject($response)
     {
         $types = array(
-            'person' => 'AgendorPeople',
-            'deal' => 'AgendorDeal',
-            'organization' => 'AgendorOrganization',
-            'task' => 'AgendorTask'
+            'person' => 'Agendor\AgendorPeople',
+            'deal' => 'Agendor\AgendorDeal',
+            'organization' => 'Agendor\AgendorOrganization',
+            'task' => 'Agendor\AgendorTask'
         );
 
         if (self::isList($response)) {
@@ -73,7 +73,7 @@ class AgendorUtil
             if (isset($objectName) && is_string($objectName) && isset($types[$objectName])) {
                 $class = $types[$objectName];
             } else {
-                $class = 'AgendorObject';
+                $class = 'Agendor\AgendorObject';
             }
 
             return AgendorObject::build($response, $class);
