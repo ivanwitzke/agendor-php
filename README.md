@@ -1,5 +1,6 @@
 agendor-php
 ===========
+[![Code Climate](https://codeclimate.com/github/ivanwitzke/agendor-php/badges/gpa.svg)](https://codeclimate.com/github/ivanwitzke/agendor-php)
 
 Agendor PHP API
 
