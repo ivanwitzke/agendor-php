@@ -1,0 +1,21 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+      - html
+      - twig
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"
+  - "**.php"
+  - "**.html"
+  - "**.twig"
+exclude_paths: []
