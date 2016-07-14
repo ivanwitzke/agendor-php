@@ -15,6 +15,7 @@ class Request extends Agendor
         $this->path = $path;
         $this->live = $live;
     }
+
     public function run()
     {
         if (!parent::getApiKey()) {
@@ -22,8 +23,6 @@ class Request extends Agendor
         }
 
         $this->parameters = array_merge($this->parameters, array( "api_key" => parent::getApiKey()));
-        // var_dump($this->parameters);
-        // $this->headers = (Agendor::LIVE) ? array("X-Live" => 1) : array();
         $client = new RestClient(array("method" => $this->method, "url" => $this->fullApiUrl($this->path), "headers" => $this->headers, "parameters" => $this->parameters ));
 
         $response = $client->run();
@@ -40,7 +39,6 @@ class Request extends Agendor
             }
         }
     }
-
 
     public function setParameters($parameters)
     {
