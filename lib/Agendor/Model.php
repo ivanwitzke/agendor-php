@@ -24,13 +24,13 @@ class Model extends Object
     public function create()
     {
         try {
-            $request = new AgendorRequest(self::getUrl(), 'POST');
+            $request = new Request(self::getUrl(), 'POST');
             $parameters = $this->__toArray(true);
             $request->setParameters($parameters);
             $response = $request->run();
             return $this->refresh($response);
         } catch (Exception $e) {
-            throw new AgendorException($e->getMessage());
+            throw new Exception($e->getMessage());
         }
     }
 
@@ -42,20 +42,20 @@ class Model extends Object
                     return false;
                 }
             }
-            $request = new AgendorRequest(self::getUrl(). '/' . $this->getId(), 'PUT');
+            $request = new Request(self::getUrl(). '/' . $this->getId(), 'PUT');
             $parameters = $this->unsavedArray();
             $request->setParameters($parameters);
             $response = $request->run();
             return $this->refresh($response);
         } catch (Exception $e) {
-            throw new AgendorException($e->getMessage());
+            throw new Exception($e->getMessage());
         }
     }
 
 
     public static function findById($id)
     {
-        $request = new AgendorRequest(self::getUrl() . '/' . $id, 'GET');
+        $request = new Request(self::getUrl() . '/' . $id, 'GET');
         $response = $request->run();
         $class = get_called_class();
         return new $class($response);
@@ -63,7 +63,7 @@ class Model extends Object
 
     public static function all($page = 1, $count = 10)
     {
-        $request = new AgendorRequest(self::getUrl(), 'GET');
+        $request = new Request(self::getUrl(), 'GET');
         $request->setParameters(array("page" => $page, "per_page" => $count));
         $response = $request->run();
         $return_array = array();

@@ -18,7 +18,7 @@ class Request extends Agendor
     public function run()
     {
         if (!parent::getApiKey()) {
-            throw new AgendorException("You need to configure API key before performing requests.");
+            throw new Exception("You need to configure API key before performing requests.");
         }
 
         $this->parameters = array_merge($this->parameters, array( "api_key" => parent::getApiKey()));
@@ -36,7 +36,7 @@ class Request extends Agendor
             } elseif ($response["code"] == 204) {
                 return true;
             } else {
-                throw AgendorException::buildWithFullMessage($decode);
+                throw Exception::buildWithFullMessage($decode);
             }
         }
     }

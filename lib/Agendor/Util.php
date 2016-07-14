@@ -42,7 +42,7 @@ class Util
     {
         $output = array();
         foreach ($object as $key => $value) {
-            if ($value instanceof AgendorObject) {
+            if ($value instanceof Object) {
                 $output[$key] = $value->__toArray(true);
             } else if (is_array($value)) {
                 $output[$key] = self::convertAgendorObjectToArray($value);
@@ -76,7 +76,7 @@ class Util
                 $class = 'Agendor\Object';
             }
 
-            return AgendorObject::build($response, $class);
+            return Object::build($response, $class);
         } else {
             return $response;
         }

@@ -18,7 +18,7 @@ class Exception extends \Exception
 
         if (isset($response_error['errors'])) {
             foreach ($response_error['errors'] as $error) {
-                $this->errors[] = new AgendorError($error);
+                $this->errors[] = new Error($error);
             }
         }
 

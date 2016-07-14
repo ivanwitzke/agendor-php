@@ -20,7 +20,7 @@ class RestClient
         );
 
         if (!$params["url"]) {
-            throw new AgendorException("You must set the URL to make a request.");
+            throw new Exception("You must set the URL to make a request.");
         } else {
             $this->url = $params["url"];
         }
@@ -33,7 +33,7 @@ class RestClient
         }
 
         if (!$this->parameters["api_key"]) {
-            throw new AgendorException("You must provide a token make a request.");
+            throw new Exception("You must provide a token make a request.");
         } else {
             $this->token = $this->parameters["api_key"];
             $this->headers[] = "Authorization: Token " . $this->token;

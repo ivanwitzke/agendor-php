@@ -11,7 +11,7 @@ class Object implements \ArrayAccess, \Iterator
     public function __construct($response = array())
     {
         $this->_attributes = array();
-        $this->_unsavedAttributes = new AgendorSet();
+        $this->_unsavedAttributes = new Set();
         $this->_position = 0;
 
         $this->refresh($response);
@@ -49,7 +49,7 @@ class Object implements \ArrayAccess, \Iterator
 
     public function __call($name, $arguments)
     {
-        $var = AgendorUtil::fixVarCase(substr($name, 3));
+        $var = Util::fixVarCase(substr($name, 3));
         if (!strncasecmp($name, 'get', 3)) {
             return $this->$var;
         } else if (!strncasecmp($name, 'set', 3)) {
@@ -117,7 +117,7 @@ class Object implements \ArrayAccess, \Iterator
     {
         $arr = array();
         foreach ($this->_unsavedAttributes->toarray() as $a) {
-            if ($this->_attributes[$a] instanceof AgendorObject) {
+            if ($this->_attributes[$a] instanceof Object) {
                 $arr[$a] = $this->_attributes[$a]->unsavedarray();
             } else {
                 $arr[$a] = $this->_attributes[$a];
@@ -145,7 +145,7 @@ class Object implements \ArrayAccess, \Iterator
         }
 
         foreach ($response as $key => $value) {
-            $this->_attributes[$key] = AgendorUtil::convertToAgendorObject($value);
+            $this->_attributes[$key] = Util::convertToAgendorObject($value);
             $this->_unsavedAttributes->remove($key);
         }
 
@@ -196,7 +196,7 @@ class Object implements \ArrayAccess, \Iterator
     public function __toArray($recursive = false)
     {
         if ($recursive) {
-            return AgendorUtil::convertAgendorObjectToArray($this->_attributes);
+            return Util::convertAgendorObjectToArray($this->_attributes);
         }
         return $this->_attributes;
     }
