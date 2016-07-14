@@ -18,7 +18,7 @@
 		"ext-mbstring":"*"
 	},
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Agendor\\": "lib/Agendor"
         }
     }
