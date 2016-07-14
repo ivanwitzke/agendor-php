@@ -5,19 +5,19 @@ class Exception extends \Exception
 {
     protected $url;
     protected $method;
-    protected $return_code;
-    protected $parameter_name;
+    protected $returnCode;
+    protected $parameterName;
     protected $type;
     protected $errors;
 
     // Builds with a message and a response from the server
-    public function __construct($message = null, $response_error = null)
+    public function __construct($message = null, $responseError = null)
     {
-        $this->url = (isset($response_error['url'])) ? $response_error['url'] : null;
-        $this->method = (isset($response_error['method'])) ? $response_error['method'] : null;
+        $this->url = (isset($responseError['url'])) ? $responseError['url'] : null;
+        $this->method = (isset($responseError['method'])) ? $responseError['method'] : null;
 
-        if (isset($response_error['errors'])) {
-            foreach ($response_error['errors'] as $error) {
+        if (isset($responseError['errors'])) {
+            foreach ($responseError['errors'] as $error) {
                 $this->errors[] = new Error($error);
             }
         }
@@ -34,11 +34,11 @@ class Exception extends \Exception
     }
 
     // Builds an exception with the server response and joins all the errors
-    public static function buildWithFullMessage($response_error)
+    public static function buildWithFullMessage($responseError)
     {
-        $message = $response_error['message'];
+        $message = $responseError['message'];
 
-        $instance =  new self($message, $response_error);
+        $instance =  new self($message, $responseError);
         return $instance;
     }
 
@@ -59,6 +59,6 @@ class Exception extends \Exception
 
     public function getReturnCode()
     {
-        return $this->return_code;
+        return $this->returnCode;
     }
 }
