@@ -14,11 +14,10 @@ class Model extends Object
     {
         $class_match = explode('\\', get_called_class());
         $class = isset($class_match[1]) ? $class_match[1] : $class_match[0];
-        $search = preg_match("/Agendor(.*)/", $class, $matches);
-        if (!preg_match("/people/i", $matches[1])) {
-            return '/'. strtolower($matches[1].'s');
+        if (!preg_match("/people/i", $class)) {
+            return '/'. strtolower($class.'s');
         }
-        return '/'. strtolower($matches[1]);
+        return '/'. strtolower($class);
     }
 
     public function create()
