@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorUtil
+class Util
 {
     public static function fixVarCase($str)
     {
@@ -56,10 +56,10 @@ class AgendorUtil
     public static function convertToAgendorObject($response)
     {
         $types = array(
-            'person' => 'Agendor\AgendorPeople',
-            'deal' => 'Agendor\AgendorDeal',
-            'organization' => 'Agendor\AgendorOrganization',
-            'task' => 'Agendor\AgendorTask'
+            'person' => 'Agendor\People',
+            'deal' => 'Agendor\Deal',
+            'organization' => 'Agendor\Organization',
+            'task' => 'Agendor\Task'
         );
 
         if (self::isList($response)) {
@@ -73,7 +73,7 @@ class AgendorUtil
             if (isset($objectName) && is_string($objectName) && isset($types[$objectName])) {
                 $class = $types[$objectName];
             } else {
-                $class = 'Agendor\AgendorObject';
+                $class = 'Agendor\Object';
             }
 
             return AgendorObject::build($response, $class);

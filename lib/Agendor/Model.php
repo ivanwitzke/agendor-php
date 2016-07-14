@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorModel extends AgendorObject
+class Model extends Object
 {
     protected static $root_url;
 

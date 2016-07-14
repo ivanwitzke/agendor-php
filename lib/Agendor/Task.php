@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorTask extends AgendorModel
+class Task extends Model
 {
     public function setId($value)
     {

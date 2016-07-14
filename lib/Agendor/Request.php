@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorRequest extends Agendor
+class Request extends Agendor
 {
     private $path;
     private $method;

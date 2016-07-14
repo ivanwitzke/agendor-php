@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorObject implements \ArrayAccess, \Iterator
+class Object implements \ArrayAccess, \Iterator
 {
 
     protected $_attributes;

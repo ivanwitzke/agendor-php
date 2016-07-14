@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorError
+class Error
 {
     protected $parameter_name;
     protected $type;

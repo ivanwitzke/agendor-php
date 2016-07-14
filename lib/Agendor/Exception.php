@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorException extends \Exception
+class Exception extends \Exception
 {
     protected $url;
     protected $method;

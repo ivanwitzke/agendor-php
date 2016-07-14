@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorOrganization extends AgendorModel
+class Organization extends Model
 {
     public function setId($value)
     {

@@ -1,7 +1,7 @@
 <?php
 namespace Agendor;
 
-class AgendorSet implements \Iterator
+class Set implements \Iterator
 {
 
     private $_values;
