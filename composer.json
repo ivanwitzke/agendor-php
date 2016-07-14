@@ -1,14 +1,15 @@
 {
 	"name": "ivanwitzke/agendor-php",
 	"description": "Agendor PHP Library",
+    "type": "library",
 	"keywords": [
 		"api"
 	],
-	"homepage": "http://websix.com.br",
+	"homepage": "https://github.com/ivanwitzke/agendor-php",
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "websix"
+			"name": "ivanwitzke"
 		}
 	],
 	"require": {
