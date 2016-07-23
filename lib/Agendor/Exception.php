@@ -36,7 +36,7 @@ class Exception extends \Exception
     // Builds an exception with the server response and joins all the errors
     public static function buildWithFullMessage($responseError)
     {
-        $message = $responseError['message'];
+        $message = $responseError['message'] ?: ($responseError['error'] ?: "Unknown error");
 
         $instance =  new self($message, $responseError);
         return $instance;
