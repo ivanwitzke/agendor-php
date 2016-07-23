@@ -13,7 +13,7 @@ class Model extends Object
     public static function getUrl()
     {
         $class_match = explode('\\', get_called_class());
-        $class = isset($class_match[1]) ? $class_match[1] : $class_match[0];
+        $class = isset($class_match[2]) ? $class_match[2] : (isset($class_match[1]) ? $class_match[1] : $class_match[0]);
         if (!preg_match("/people/i", $class)) {
             return '/'. strtolower($class.'s');
         }
