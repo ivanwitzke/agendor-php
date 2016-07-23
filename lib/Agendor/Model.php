@@ -1,5 +1,5 @@
 <?php
-namespace Agendor;
+namespace Ivanwitzke\Agendor;
 
 class Model extends Object
 {
@@ -58,6 +58,13 @@ class Model extends Object
         $response = $request->run();
         $class = get_called_class();
         return new $class($response);
+    }
+
+    public static function delete($id)
+    {
+        $request = new Request(self::getUrl() . '/' . $id, 'DELETE');
+        $response = $request->run();
+        return $response;
     }
 
     public static function all($page = 1, $count = 10)
