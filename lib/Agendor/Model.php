@@ -60,6 +60,13 @@ class Model extends Object
         return new $class($response);
     }
 
+    public static function delete($id)
+    {
+        $request = new Request(self::getUrl() . '/' . $id, 'DELETE');
+        $response = $request->run();
+        return $response;
+    }
+
     public static function all($page = 1, $count = 10)
     {
         $request = new Request(self::getUrl(), 'GET');

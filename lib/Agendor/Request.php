@@ -26,14 +26,17 @@ class Request extends Agendor
         $client = new RestClient(array("method" => $this->method, "url" => $this->fullApiUrl($this->path), "headers" => $this->headers, "parameters" => $this->parameters ));
 
         $response = $client->run();
+
+        if ($response["code"] == 204) {
+            return true;
+        }
+
         $decode = json_decode($response["body"], true);
         if ($decode === null) {
             throw new Exception("Failed to decode json from response.\n\n Response: ".$response);
         } else {
             if ($response["code"] == 200 || $response["code"] == 201) {
                 return $decode;
-            } elseif ($response["code"] == 204) {
-                return true;
             } else {
                 throw Exception::buildWithFullMessage($decode);
             }
