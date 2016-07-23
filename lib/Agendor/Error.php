@@ -1,5 +1,5 @@
 <?php
-namespace Agendor;
+namespace Ivanwitzke\Agendor;
 
 class Error
 {
