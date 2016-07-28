@@ -11,6 +11,13 @@ To use it you will first need an API Token, that can be found [here](https://web
 Install it using [Composer](https://getcomposer.org/):
 
 `composer require ivanwitzke/agendor-php`
+
+or download the [latest zip file](https://github.com/ivanwitzke/agendor-php/archive/master.zip) and extract to your project folder, then require the `agendor-php/Agendor.php` file.
+
+    <php
+        require("PATH_TO_PROJECT_FOLDER/agendor-php/Agendor.php");
+        
+
  
 Then on the controller (where you are going to use it) we set the API Key / Token
 
@@ -21,7 +28,7 @@ Then on the controller (where you are going to use it) we set the API Key / Toke
 The Agendor API supports requests to "People", "Organization", "Task" and "Deal". Each one of those are represented by a Class with the same name on this lib, and have the same properties as defined on the [Api docs](http://docs.agendor.apiary.io).
 
 ###**The Methods**###
-**Requesting all items (paginated) **
+**Requesting all items (paginated)**
 
    `$page` is the page to be returned;
    `$limit` is how many items per page;
