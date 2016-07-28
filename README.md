@@ -14,7 +14,7 @@ Install it using [Composer](https://getcomposer.org/):
 
 or download the [latest zip file](https://github.com/ivanwitzke/agendor-php/archive/master.zip) and extract to your project folder, then require the `agendor-php/Agendor.php` file.
 
-    <php
+    <?php
         require("PATH_TO_PROJECT_FOLDER/agendor-php/Agendor.php");
         
 
